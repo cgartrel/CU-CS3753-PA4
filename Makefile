@@ -1,7 +1,7 @@
 # File: Makefile
 # By: Andy Sayler <www.andysayler.com>
 # Adopted from work by: Chris Wailes <chris.wailes@gmail.com>
-# Project: CSCI 3753 Programming Assignment 5
+# Project: CSCI 3753 Programming Assignment 4
 # Creation Date: 2010/04/06
 # Modififed Date: 2012/04/12
 # Description:

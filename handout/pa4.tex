@@ -81,20 +81,20 @@ unencrypted files, and the OpenSSL\cite{openssl-website}
 crypto\cite{openssl-evp} library to provide secure encryption.
 
 The filesystem itself is a simple mirrored pass-through filesystem. For
-example, if our pa5-encfs is mounted on the directory \textit{/tmp/pa5fs}
+example, if our pa4-encfs is mounted on the directory \textit{/tmp/pa4fs}
 and is set to mirror the directory \textit{/home/user}, then any
-action performed on the file \textit{/tmp/pa5fs/foo.txt}
+action performed on the file \textit{/tmp/pa4fs/foo.txt}
 will be translated into an action on the file
 \textit{/home/user/foo.txt}.
 
 Instead of just directly passing actions to the
-underlying mirrored file, however, your pa5-encfs system will perform encryption
+underlying mirrored file, however, your pa4-encfs system will perform encryption
 and decryption as necessary. Thus, if you create a new file
-\textit{/tmp/pa5fs/bar.txt} in the aforementioned setup
+\textit{/tmp/pa4fs/bar.txt} in the aforementioned setup
 and write some data to it, the data will
 be encrypted before being written to the backing
 \textit{/home/user/bar.txt} file. Likewise, if you were to read the
-\textit{/tmp/pa5fs/bar.txt} file, your filesystem would read the backing encrypted
+\textit{/tmp/pa4fs/bar.txt} file, your filesystem would read the backing encrypted
 \textit{/home/user/bar.txt} file and decrypt the contents before
 passing it to you. If you were to try to read
 the backing \textit{/home/user/bar.txt} file directly, you would just
@@ -321,9 +321,9 @@ receive full credit.
 
 \begin{packed_item}
   \item {\bf Executable} Your filesystem should build a standard FUSE
-    executable file called \texttt{pa5-encfs} that mounts your file
+    executable file called \texttt{pa4-encfs} that mounts your file
     system. Your executable should accept the following call format:
-    \texttt{./pa5-encfs <Key Phrase> <Mirror Directory> <Mount Point>}.
+    \texttt{./pa4-encfs <Key Phrase> <Mirror Directory> <Mount Point>}.
   \item {\bf Read Behavior} When an encrypted file is read through your
     filesystem, it should be transparently decrypted and the plaintext
     data passed to the reading application. When an unencrypted file
@@ -347,7 +347,7 @@ receive full credit.
   indicating whether or not a file is encrypted using the the extended
   attributes for the corresponding mirror file. The flag should reside
   in the \texttt{user} namespace\cite{freedesktop-xattr} and be named
-  \texttt{pa5-encfs.encrypted}. It should have ascii text values of either
+  \texttt{pa4-encfs.encrypted}. It should have ascii text values of either
   ``true'' or ``false''. If no flag is detected on a specific file,
   then it should be assumed that the file is not encrypted (same
   behavior as detecting a flag with a value equal to ``false'').

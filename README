@@ -52,7 +52,7 @@ xattr-util     - A simple program for manipulating extended attributes
 aes-crypt-util - A simple program for encrypting, decrypting, or copying files
 
 ---Documentation---
-handout/pa5.pdf             - Assignment Instructions and Tips
+handout/pa4.pdf             - Assignment Instructions and Tips
 http://youtu.be/VrMi6RaUNDs - Assignment Explanation Video 1
 
 ---Examples---
